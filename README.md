@@ -149,6 +149,14 @@ W* = W0 + alpha * scaling * DeltaW
 
 After folding, the checkpoint contains ordinary FFS-style weights and does not require LoRA wrappers, a router, or input-dependent branch selection.
 
+## Official KITTI Evaluation Evidence
+
+The RepGeo-FFS result was submitted to the official KITTI Scene Flow / Stereo 2015 test server. The private-preview/check page is:
+
+[KITTI official private-preview result](https://www.cvlibs.net/datasets/kitti/user_submit_check_login.php?benchmark=scene_flow&user=aa376795597a4f18ec9c0747279d694da3811c7c&result=297134ba0b3f09b59d7e383ea230b0d2a3934f00)
+
+This link is used as course inspection evidence that the result was evaluated by the KITTI server. It is not claimed as a public leaderboard ranking.
+
 ## Notes
 
 - This repository focuses on code inspection and reproducibility.
