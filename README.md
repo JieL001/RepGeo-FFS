@@ -96,6 +96,26 @@ powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\06_inf
 powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\08_eval_base_vs_repgeo_smoke.ps1
 ```
 
+## Qualitative Evidence
+
+The following paper-style comparison boards are included for course inspection. They use fixed samples and consistent method columns to show target-domain gains and cross-domain behavior.
+
+### KITTI target-domain qualitative gains
+
+![KITTI target-domain qualitative gains](assets/qualitative/cvpr_long_kitti_zoom_and_methods.png)
+
+### Multi-dataset comparison matrix
+
+![Multi-dataset qualitative comparison](assets/qualitative/cvpr_long_multidataset_9x7_repgeo.png)
+
+### ETH3D / Middlebury cross-domain comparison
+
+![Cross-domain qualitative comparison](assets/qualitative/cvpr_long_crossdomain_eth3d_middlebury.png)
+
+Additional long appendix board:
+
+[assets/qualitative/cvpr_long_appendix_all_qualitative.png](assets/qualitative/cvpr_long_appendix_all_qualitative.png)
+
 ## Training
 
 Short smoke training:
