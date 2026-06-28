@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
+
+# Large checkpoints and experiment outputs
+*.pth
+*.pkl
+*.pt
+weights/*
+!weights/.gitkeep
+!weights/README.md
+output/
+output_eval/
+output_train/
+tmp/
+
+# Datasets
+data_scene_flow/*
+!data_scene_flow/.gitkeep
+!data_scene_flow/README.md
+ETH3D/
+middleburry/
+Middlebury/
+
+# Generated demo outputs may be recreated locally.
+live_demo_code_20260628/outputs/**/*.pth
+live_demo_code_20260628/outputs/**/last_state.pth
+live_demo_code_20260628/outputs/**/model_best*.pth
+
+# OS files
+Thumbs.db
+.DS_Store
+
