@@ -1,9 +1,10 @@
-﻿$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 $Root = Resolve-Path (Join-Path $PSScriptRoot "..\..")
 Set-Location $Root
+. (Join-Path $PSScriptRoot "_select_python.ps1")
 
-python scripts\benchmark_forward_runtime.py `
+& $DemoPython scripts\benchmark_forward_runtime.py `
   --model_dir weights\23-36-37\model_best_bp2_serialize.pth `
   --height 480 `
   --width 640 `
@@ -16,7 +17,7 @@ python scripts\benchmark_forward_runtime.py `
 
 $RepGeo = "output_eval\stage29_repgeo_gamma_sweep_20260617\checkpoints\repgeo_gamma_1.pth"
 if (Test-Path $RepGeo) {
-  python scripts\benchmark_forward_runtime.py `
+  & $DemoPython scripts\benchmark_forward_runtime.py `
     --model_dir $RepGeo `
     --height 480 `
     --width 640 `
@@ -29,5 +30,3 @@ if (Test-Path $RepGeo) {
 } else {
   Write-Host "RepGeo compiled checkpoint not found, base runtime is already measured."
 }
-
-

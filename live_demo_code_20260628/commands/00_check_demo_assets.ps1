@@ -1,7 +1,8 @@
-﻿$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 $Root = Resolve-Path (Join-Path $PSScriptRoot "..\..")
 Set-Location $Root
+. (Join-Path $PSScriptRoot "_select_python.ps1")
 
 Write-Host "ROOT = $Root"
 Write-Host "---- required files / folders ----"
@@ -47,5 +48,4 @@ foreach ($p in $optional) {
 }
 
 Write-Host "---- python / torch ----"
-python -c "import sys, torch; print('python=', sys.version.split()[0]); print('torch=', torch.__version__); print('cuda_available=', torch.cuda.is_available()); print('cuda_name=', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU only')"
-
+& $DemoPython -c "import sys, torch; print('python=', sys.version.split()[0]); print('torch=', torch.__version__); print('cuda_available=', torch.cuda.is_available()); print('cuda_name=', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU only')"

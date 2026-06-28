@@ -1,7 +1,8 @@
-﻿$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 $Root = Resolve-Path (Join-Path $PSScriptRoot "..\..")
 Set-Location $Root
+. (Join-Path $PSScriptRoot "_select_python.ps1")
 
 $State = "output_eval\remote_stage23_repgeo_seed2_long_20260617\repgeo_ffs_repgeo_seed2_long_20260617_090506\repgeo_student\model_best_epe.pth"
 $Base = "weights\23-36-37\model_best_bp2_serialize.pth"
@@ -11,7 +12,7 @@ if (!(Test-Path $State)) {
   exit 0
 }
 
-python scripts\merge_lora_for_inference.py `
+& $DemoPython scripts\merge_lora_for_inference.py `
   --model_dir $State `
   --base_model_dir $Base `
   --out_model live_demo_code_20260628\outputs\repgeo_merged_demo.pth `
@@ -23,5 +24,3 @@ python scripts\merge_lora_for_inference.py `
 
 Write-Host "Merged static checkpoint: live_demo_code_20260628\outputs\repgeo_merged_demo.pth"
 Write-Host "Merge report: live_demo_code_20260628\outputs\repgeo_merged_demo_report.json"
-
-

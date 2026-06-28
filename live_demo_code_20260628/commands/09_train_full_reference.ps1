@@ -1,4 +1,4 @@
-﻿param(
+param(
   [switch]$Run
 )
 
@@ -6,6 +6,7 @@ $ErrorActionPreference = "Stop"
 
 $Root = Resolve-Path (Join-Path $PSScriptRoot "..\..")
 Set-Location $Root
+. (Join-Path $PSScriptRoot "_select_python.ps1")
 
 $RunId = "live_full_repgeo_" + (Get-Date -Format "yyyyMMdd_HHmmss")
 $OutDir = "output_train\$RunId"
@@ -37,7 +38,7 @@ $ArgsList = @(
 )
 
 Write-Host "Full RepGeo training command:"
-Write-Host "python $($ArgsList -join ' ')"
+Write-Host "$DemoPython $($ArgsList -join ' ')"
 Write-Host ""
 Write-Host "Output directory will be: $OutDir"
 Write-Host ""
@@ -49,6 +50,4 @@ if (-not $Run) {
   exit 0
 }
 
-python @ArgsList
-
-
+& $DemoPython @ArgsList

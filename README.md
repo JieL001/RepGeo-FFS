@@ -97,6 +97,31 @@ powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\06_inf
 powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\08_eval_base_vs_repgeo_smoke.ps1
 ```
 
+To generate more readable live-inspection boards:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\10_multi_inference_board.ps1
+powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\08_eval_base_vs_repgeo_smoke.ps1
+powershell -ExecutionPolicy Bypass -File live_demo_code_20260628\commands\03_train_smoke_repgeo.ps1
+```
+
+The scripts write clean PNG summaries instead of mixing metrics into terminal text:
+
+```text
+live_demo_code_20260628/outputs/boards/multi_sample_live_inference.png
+live_demo_code_20260628/outputs/boards/live_inference_comparison.png
+live_demo_code_20260628/outputs/boards/eval_metrics_board.png
+live_demo_code_20260628/outputs/boards/train_smoke_board.png
+```
+
+Example generated boards:
+
+![Live multi-sample inference](assets/live_demo_boards/multi_sample_live_inference.png)
+
+![Evaluation metrics board](assets/live_demo_boards/eval_metrics_board.png)
+
+![Training smoke board](assets/live_demo_boards/train_smoke_board.png)
+
 ## Qualitative Evidence
 
 The following paper-style comparison boards are included for course inspection. They use fixed samples and consistent method columns to show target-domain gains and cross-domain behavior.
