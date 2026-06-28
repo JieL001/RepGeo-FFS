@@ -29,6 +29,7 @@ Key files for inspection:
 | Static residual folding | `scripts/merge_lora_for_inference.py` |
 | RepGeo gamma checkpoint export | `scripts/make_repgeo_gamma_checkpoint.py` |
 | Inference demo | `scripts/run_demo.py` and `live_demo_code_20260628/commands/infer_no_window.py` |
+| How to run reproduction | `HOW_TO_RUN_REPRODUCTION.md` |
 | Live inspection guide | `live_demo_code_20260628/00_快速上手指南.md` |
 | Teacher checklist | `live_demo_code_20260628/TEACHER_CHECKLIST_验收问答准备.md` |
 
